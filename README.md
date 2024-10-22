@@ -1,7 +1,14 @@
-# STEPS OF PROJECT AND FLOW
+# Steps
 
 - Create React App
 - Tailwind
+- Setup and Route Body as Main
+- Header
+- Login Form
+- Sign Up Form Same Login form to SignUp Form - Validations Custom
+- For Validation Use Library Formik - useRef utils func
+- Authentication - firebase - enable auth firbase
+- npm i -g firebase-tools , firebase login , firebase init
 
 # Features
 
@@ -19,3 +26,5 @@
 - Netlfix GPT
   - Search Bar
   - Movie Suggestions
+
+App - Body -
