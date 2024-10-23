@@ -4,11 +4,21 @@
 - Tailwind
 - Setup and Route Body as Main
 - Header
+
+#### 1. User Authentication
+
 - Login Form
 - Sign Up Form Same Login form to SignUp Form - Validations Custom
 - For Validation Use Library Formik - useRef utils func
-- Authentication - firebase - enable auth firbase
-- npm i -g firebase-tools , firebase login , firebase init
+- Authentication - firebase - enable auth firbase - utils
+  Firebase - Create firebase account follow steps -> create fire base file and add details -> Optionally Github Actions->Fireabse Build in src -> Enable User auth
+- Log In Logic
+- Creating Redux Store for Storing User Object
+- onAuthChange - when some authentication happen it is executed
+- Navigate direclty on auth change useEffect
+- Sign Out Apis , Updated User - > Auth.currentUser
+
+#### 2. Fetch Movies and Browse Page
 
 # Features
 
