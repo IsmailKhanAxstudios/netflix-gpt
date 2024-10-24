@@ -6,15 +6,13 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../../utils/firebase";
-import { useNavigate } from "react-router-dom";
-
+import { BG_IMG_URL } from "../../utils/constants";
 const Login = () => {
   const [isLogin, setIsLogin] = useState(false);
   const [error, setError] = useState(null);
+
   const email = useRef(null);
   const password = useRef(null);
-
-  const navigate = useNavigate();
 
   const handleLogin = () => {
     setIsLogin(!isLogin);
@@ -24,6 +22,7 @@ const Login = () => {
     const message = validate(email.current.value, password.current.value);
     setError(message);
     if (message) return;
+
     if (!isLogin) {
       createUserWithEmailAndPassword(
         auth,
@@ -32,7 +31,6 @@ const Login = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -47,7 +45,6 @@ const Login = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -56,14 +53,12 @@ const Login = () => {
         });
     }
   };
+
   return (
     <div>
       <Header />
       <div className="absolute">
-        <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/f272782d-cf96-4988-a675-6db2afd165e0/web/SA-en-20241008-TRIFECTA-perspective_1339416f-3caa-4b58-b88a-3ab696a48ba0_small.jpg"
-          alt="netlfix bg"
-        />
+        <img src={BG_IMG_URL} alt="netlfix background" />
       </div>
 
       <form
